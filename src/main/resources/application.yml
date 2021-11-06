@@ -1,0 +1,48 @@
+micronaut:
+  application:
+    name: micronautExample
+  server:
+    port: 7777
+controller:
+  hello:
+    path: "/hello"
+  SNSNotification: "/SNS"
+  SNSNotificationSMS: "/SMSNotification"
+  SNSNotificationEmail: "/EmailNotification"
+  S3: "/S3"
+  S3ListBuckets: "/ListBuckets"
+  S3CreateBuckets: "/CreateBuckets"
+  S3DeleteBuckets: "/DeleteBuckets"
+  S3PutObjectIntoBuckets: "/PutObjectIntoBuckets"
+constant:
+  hello: "Hello World"
+  default: "Default Value"
+util:
+  initial:
+    config:
+      es: "Spanish"
+      en: "English"
+gradle:
+  dependencies:
+    lombok: "1.18.20"
+messages:
+  services:
+    methodStart: "Service has started correctly"
+    methodEnd: "Service has ended correctly"
+  controller:
+    methodStart: "Controller has started correctly"
+aws:
+  cognito:
+    access-key-id: "AKIA44NMA5E4FBPKZFQY"
+    secret-access-key: "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"
+    user-pool-id: "us-east-2_KGYN1khL7"
+    client-id: "48i3c27nrsofcbjq05ah65s0t0"
+    client-secret: "qjek7rgttdd6k09v27fr4i77andcat3j5fe9b7okq8gko3mf0c8"
+    access-key-id-kms: "AKIAVYM47NFPHK7PVXTB"
+    secret-access-key-kms: "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"
+  dynamodb:
+    access-key-id: "AKIA44NMA5E4OQUJ25MH"
+    secret-access-key: "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"
+  sns:
+    accessKey: "AKIAVYM47NFPGEZXKLHD"
+    secretId: "E6LLTwbPFPmw0DXFaYSPTU5Kve3jnDg1k6HrOrtB"

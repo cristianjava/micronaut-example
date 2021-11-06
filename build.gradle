@@ -1,0 +1,62 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("io.micronaut.application") version "1.5.3"
+}
+
+version = "0.1"
+group = "com.example"
+
+repositories {
+    mavenCentral()
+}
+
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("com.example.*")
+    }
+}
+
+dependencies {
+    annotationProcessor("org.projectlombok:lombok")
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-runtime")
+    implementation("io.micronaut:micronaut-inject-java")
+    implementation("javax.annotation:javax.annotation-api")
+    implementation(group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '1.11.805')
+    implementation(group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.825')
+    implementation(group: 'com.amazonaws', name: 'aws-java-sdk-core', version: '1.11.825')
+    implementation(group: 'software.amazon.awssdk', name: 'cognitoidentityprovider', version: '2.17.12')
+    implementation(group: 'com.amazonaws', name: 'aws-java-sdk-cognitoidp', version: '1.12.55')
+
+    implementation(group: 'software.amazon.awssdk', name: 'regions', version: '2.17.4')
+    implementation(group: 'software.amazon.awssdk', name: 'sns', version: '2.17.4')
+    implementation(group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.12.31')
+
+    compileOnly("org.projectlombok:lombok")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    compileOnly(group: 'org.projectlombok', name: 'lombok', version: '${gradle.dependencies.lombok}')
+    implementation("io.micronaut:micronaut-validation")
+    implementation(group: 'org.redisson', name: 'redisson-micronaut-20', version: '3.16.4')
+    implementation(group: 'org.redisson', name: 'redisson-micronaut-30', version: '3.16.4')
+    implementation(group: 'redis.clients', name: 'jedis', version: '3.7.0')
+
+
+    testImplementation("org.mockito:mockito-core")
+
+
+}
+
+
+application {
+    mainClass.set("com.example.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
+}
+
+
+
