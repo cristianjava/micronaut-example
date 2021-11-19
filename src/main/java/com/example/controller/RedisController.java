@@ -17,6 +17,7 @@ public class RedisController {
 
     @Post("/save")
     public void createPoolClient(String value) throws ExecutionException, InterruptedException, IOException {
+        System.out.println("hola");
         redisService.save(value);
     }
 

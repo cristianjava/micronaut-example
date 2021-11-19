@@ -147,12 +147,17 @@ public class CognitoService {
         VerifyUserAttributeResponse responseVerify = cognitoClient.verifyUserAttribute(verifyUserAttributeRequest);
         */
 
-        /**AttributeType userAttrs = AttributeType.builder()
-                .name("email").value(userName)
-                .name("custom:idCardType").value("CC")
-                .name("custom:idCardNumber").value("1038333777")
-                .name("phone number").value("+573233913832")
-                .build();
+        /**List<AttributeType> attributeTypes = new ArrayList<>();
+         attributeTypes.add(AttributeType.builder().name("email").value(model.getEmail()).build());
+         attributeTypes.add(AttributeType.builder().name("nickname").value(model.getNumberDocument()).build());
+         attributeTypes.add(AttributeType.builder().name("phone_number").value(model.getNumberPhone()).build());
+         attributeTypes.add(AttributeType.builder().name("custom:first_name").value(model.getFirstName()).build());
+         attributeTypes.add(AttributeType.builder().name("custom:last_name").value(model.getLastName()).build());
+         attributeTypes.add(AttributeType.builder().name("custom:type_document").value(model.getTypeDocument()).build());
+         attributeTypes.add(AttributeType.builder().name("custom:gender").value("M").build());
+         attributeTypes.add(AttributeType.builder().name("custom:date_birth").value("1636942168566").build());
+         attributeTypes.add(AttributeType.builder().name("custom:date_expedition_id").value("1632942168566").build());
+         attributeTypes.add(AttributeType.builder().name("custom:commerce").value("11337799").build());
 
         SignUpRequest signUpRequest = SignUpRequest.builder()
                 .clientId(clientId)

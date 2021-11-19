@@ -27,7 +27,7 @@ public class RedisService {
     Jedis jedis = new Jedis("dale-portal-redis.gyk9d1.0001.use2.cache.amazonaws.com", 6379);
 
     public void save(String value) throws ExecutionException, InterruptedException, IOException {
-        Jedis jedis = new Jedis("127.0.0.1", 6379);
+        //Jedis jedis = new Jedis("127.0.0.1", 6379);
 
         //upsertCacheEntry("Name" + 1, "Value" + 1, false);
 
