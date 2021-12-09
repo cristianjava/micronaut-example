@@ -17,6 +17,17 @@ micronaut:
       swagger-ui:
         paths: classpath:META-INF/swagger/views/swagger-ui
         mapping: /swagger-ui/**
+  security:
+#    ip-patterns:
+#      - 127.0.0.1
+#      - 192.168.1.*
+    authentication: bearer
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: changeThisSecretToALongSecureString
 controller:
   hello:
     path: "/hello"

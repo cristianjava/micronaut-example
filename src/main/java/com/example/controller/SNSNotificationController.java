@@ -4,9 +4,12 @@ import com.example.services.ISNSNotificationService;
 import io.micronaut.context.annotation.Value;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Post;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Secured(SecurityRule.IS_ANONYMOUS)
 @Controller("${controller.SNSNotification}")
 public class SNSNotificationController {
 

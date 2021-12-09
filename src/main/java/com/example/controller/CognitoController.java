@@ -5,9 +5,12 @@ import com.example.vo.InitiateAuthResponseDTO;
 import com.example.vo.LoginData;
 import com.example.vo.UserModel;
 import io.micronaut.http.annotation.*;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 
 import static io.micronaut.http.HttpHeaders.AUTHORIZATION;
 
+@Secured(SecurityRule.IS_ANONYMOUS)
 @Controller("/cognito")
 public class CognitoController {
 

@@ -1,5 +1,5 @@
 plugins {
-    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("com.github.johnrengelman.shadow") version "6.1.0"
     id("io.micronaut.application") version "1.5.3"
 }
 
@@ -33,6 +33,10 @@ dependencies {
     implementation(group: 'com.amazonaws', name: 'aws-java-sdk-cognitoidp', version: '1.12.55')
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation 'software.amazon.awssdk:secretsmanager:2.17.29'
+
+    // Security
+    implementation("io.micronaut.security:micronaut-security-annotations")
+    implementation("io.micronaut.security:micronaut-security-jwt")
 
     // swagger
     implementation("io.swagger.core.v3:swagger-annotations")
