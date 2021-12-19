@@ -3,6 +3,10 @@ micronaut:
     name: micronautExample
   server:
     port: 80
+    dual-protocol: true
+  ssl:
+    enabled: true
+    buildSelfSigned: true
   router:
     static-resources:
       swagger:
@@ -28,6 +32,8 @@ micronaut:
           secret:
             generator:
               secret: changeThisSecretToALongSecureString
+mongodb:
+  uri: "mongodb://localhost:27017"
 controller:
   hello:
     path: "/hello"
